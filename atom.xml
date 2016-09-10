@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>三文鱼</title>
+  <subtitle>专注于移动应用开发</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://isanwenyu.github.io/"/>
+  <updated>2016-09-09T08:47:59.000Z</updated>
+  <id>https://isanwenyu.github.io/</id>
+  
+  <author>
+    <name>isanwenyu@163.com</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>「Stay hungry. Stay foolish.」</title>
+    <link href="https://isanwenyu.github.io/2016/09/09/hello-world/"/>
+    <id>https://isanwenyu.github.io/2016/09/09/hello-world/</id>
+    <published>2016-09-09T02:30:52.000Z</published>
+    <updated>2016-09-09T08:47:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>欢迎来到我的博客！ 爱代码，爱学习，努力做一个有追求的码农！</p>
+</blockquote>
+<h3 id="出处"><a href="#出处" class="headerlink" title="出处"></a>出处</h3><p>2005 年乔布斯在斯坦福的演讲中，说道：</p>
+<pre><code>当我年轻的时候，有一本叫做《整个地球的目录》振聋发聩的杂志，它是我们那一代人的圣经之一。它是一个叫 Stewart Brand 的家伙在离这里不远的 Menlo Park 书写的，他象诗一般神奇地将这本书带到了这个世界。那是六十年代后期，在个人电脑出现之前，所以这本书全部是用打字机、剪刀还有偏光镜制作的。有点像用软皮包装的 Google，在 Google 出现三十五年之前：这是理想主义的，其中有许多灵巧的工具和伟大的想法。
+Stewart 和他的伙伴出版了几期的《整个地球的目录》，当它完成了自己使命的时候，他们做出了最后一期的目录。那是在七十年代的中期，你们的时代。在最后一期的封底上是清晨乡村公路的照片，如果你有冒险精神的话，你可以自己找到这条路的。在照片之下有这样一段话：“求知若饥，虚心若愚。”这是他们停刊的告别语。“求知若饥，虚心若愚。”我总是希望自己能够那样，现在，在你们即将毕业，开始新的旅程的时候，我也希望你们能做到这样：
+Stay Hungry . Stay Foolish.
+</code></pre><p>这就是乔布斯所说的「Stay Hungry . Stay Foolish.」的来源，1972 年《整个地球的目录》（Whole Earth Catalog） 的最后一期封底。</p>
+<h3 id="有意思的释义"><a href="#有意思的释义" class="headerlink" title="有意思的释义"></a>有意思的释义</h3><ul>
+<li>保持饥饿，保持愚蠢</li>
+<li>求知若饥，虚心若愚</li>
+<li>做个吃货，做个二货</li>
+<li>金正日死前给朝鲜人民的遗言是：Stay hungry, stay foolish. </li>
+</ul>
+<h3 id="正统的翻译"><a href="#正统的翻译" class="headerlink" title="正统的翻译"></a>正统的翻译</h3><p>转一下StackExchange上的解释，可能英语母语的人的解释（而且是最高票数的解释）参考价值大一点，：<a href="http://english.stackexchange.com/questions/44538/what-does-the-phrase-stay-hungry-stay-foolish-mean" target="_blank" rel="external">quotes - What does the phrase “Stay Hungry. Stay Foolish” mean?
+</a></p>
+<blockquote>
+<p>   Stay Hungry.</p>
+</blockquote>
+<p>Never be satisfied, and always push yourself.<br>永远不满足，不停地push你自己。</p>
+<blockquote>
+<p>  Stay Foolish.</p>
+</blockquote>
+<p>Do (or be willing to keep trying) the things people say cannot be done.<br>做那些别人认为不可能搞定的事情。 </p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ul>
+<li><a href="http://www.zhihu.com/question/20078678" target="_blank" rel="external">http://www.zhihu.com/question/20078678</a></li>
+<li><a href="https://www.zhihu.com/question/19557797/answer/16544773" target="_blank" rel="external">https://www.zhihu.com/question/19557797/answer/16544773</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;欢迎来到我的博客！ 爱代码，爱学习，努力做一个有追求的码农！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;出处&quot;&gt;&lt;a href=&quot;#出处&quot; class=&quot;headerlink&quot; title=&quot;出处&quot;&gt;&lt;/a&gt;出处&lt;/h3&gt;&lt;p&gt;2005 
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
