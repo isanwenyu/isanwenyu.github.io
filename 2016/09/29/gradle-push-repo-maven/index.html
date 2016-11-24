@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="gradle,Android," />
 
 
 
@@ -88,15 +88,25 @@
 
 
 
-<meta name="description" content="「Stay hungry. Stay foolish.」">
-<meta property="og:type" content="website">
-<meta property="og:title" content="三文鱼">
-<meta property="og:url" content="https://isanwenyu.github.io/index.html">
+<meta name="description" content="前两天在Bintray中我把maven中的LazyFragment开源项目删除并重新上传。由于之前该repo已经添加到JCenter中，当我再次上传成功后再次往JCenter中添加时，Bintray返回消息：The package you requested to include already exists in JCenter，并且看到我maven仓库中有了名为LazyFragment-{我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何把Android Studio项目发布到中央仓库JCenter/第三方仓库JitPack中">
+<meta property="og:url" content="https://isanwenyu.github.io/2016/09/29/gradle-push-repo-maven/index.html">
 <meta property="og:site_name" content="三文鱼">
-<meta property="og:description" content="「Stay hungry. Stay foolish.」">
+<meta property="og:description" content="前两天在Bintray中我把maven中的LazyFragment开源项目删除并重新上传。由于之前该repo已经添加到JCenter中，当我再次上传成功后再次往JCenter中添加时，Bintray返回消息：The package you requested to include already exists in JCenter，并且看到我maven仓库中有了名为LazyFragment-{我">
+<meta property="og:image" content="http://oda2i06ov.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-29%20%E4%B8%8B%E5%8D%884.31.14.png">
+<meta property="og:image" content="http://oda2i06ov.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-29%20%E4%B8%8B%E5%8D%884.37.33.png">
+<meta property="og:image" content="http://oda2i06ov.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-29%20%E4%B8%8B%E5%8D%884.41.09.png">
+<meta property="og:image" content="http://oda2i06ov.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-29%20%E4%B8%8B%E5%8D%884.43.30.png">
+<meta property="og:image" content="http://oda2i06ov.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-29%20%E4%B8%8B%E5%8D%884.50.15.png">
+<meta property="og:image" content="http://oda2i06ov.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-30%20%E4%B8%8B%E5%8D%882.50.09.png">
+<meta property="og:image" content="http://oda2i06ov.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-29%20%E4%B8%8B%E5%8D%883.57.51.png">
+<meta property="og:image" content="http://oda2i06ov.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-29%20%E4%B8%8B%E5%8D%883.53.42.png">
+<meta property="og:updated_time" content="2016-09-30T07:24:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="三文鱼">
-<meta name="twitter:description" content="「Stay hungry. Stay foolish.」">
+<meta name="twitter:title" content="如何把Android Studio项目发布到中央仓库JCenter/第三方仓库JitPack中">
+<meta name="twitter:description" content="前两天在Bintray中我把maven中的LazyFragment开源项目删除并重新上传。由于之前该repo已经添加到JCenter中，当我再次上传成功后再次往JCenter中添加时，Bintray返回消息：The package you requested to include already exists in JCenter，并且看到我maven仓库中有了名为LazyFragment-{我">
+<meta name="twitter:image" content="http://oda2i06ov.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-29%20%E4%B8%8B%E5%8D%884.31.14.png">
 
 
 
@@ -117,9 +127,9 @@
 
 
 
-  <link rel="canonical" href="https://isanwenyu.github.io/"/>
+  <link rel="canonical" href="https://isanwenyu.github.io/2016/09/29/gradle-push-repo-maven/"/>
 
-  <title> 三文鱼 </title>
+  <title> 如何把Android Studio项目发布到中央仓库JCenter/第三方仓库JitPack中 | 三文鱼 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -150,9 +160,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -262,9 +270,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -284,193 +292,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/11/23/HighLight-latest-usage/" itemprop="url">
-                  一个用于app指向性功能高亮库：HighLight的最新用法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-23T11:25:46+08:00" content="2016-11-23">
-              2016-11-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/GitHub/" itemprop="url" rel="index">
-                    <span itemprop="name">GitHub</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/11/23/HighLight-latest-usage/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/23/HighLight-latest-usage/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Highlight"><a href="#Highlight" class="headerlink" title="Highlight"></a>Highlight</h1><p><a href="https://bintray.com/isanwenyu/maven/Highlight/_latestVersion" target="_blank" rel="external"> <img src="https://api.bintray.com/packages/isanwenyu/maven/Highlight/images/download.svg" alt="Download"> </a></p>
-<blockquote>
-<p>一个用于app指向性功能高亮的库。<br><br>forked from <a href="https://github.com/hongyangAndroid/Highlight" target="_blank" rel="external">hongyangAndroid/Highlight</a><br><br>最新地址：<a href="https://github.com/isanwenyu/Highlight" target="_blank" rel="external">https://github.com/isanwenyu/Highlight</a><br><br>博客地址：<a href="https://isanwenyu.github.io/2016/11/23/HighLight-latest-usage/">https://isanwenyu.github.io/2016/11/23/HighLight-latest-usage/</a></p>
-</blockquote>
-<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p>竖屏：</p>
-<p><img src="http://oda2i06ov.bkt.clouddn.com/high_light_demo.gif" width="320px"></p>
-<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>下载代码，然后：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">       compile project(':highlight')</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile &apos;com.isanwenyu.highlight:highlight:1.6.0&apos;</div></pre></td></tr></table></figure>
-<p>再或者</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">  &lt;groupId&gt;com.isanwenyu.highlight&lt;/groupId&gt;</div><div class="line">  &lt;artifactId&gt;highlight&lt;/artifactId&gt;</div><div class="line">  &lt;version&gt;1.6.0&lt;/version&gt;</div><div class="line">  &lt;type&gt;pom&lt;/type&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
-<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><h3 id="Next-Mode-下一步模式"><a href="#Next-Mode-下一步模式" class="headerlink" title="Next Mode 下一步模式"></a>Next Mode 下一步模式</h3><blockquote>
-<p>调用<code>enableNext()</code>开启<code>Next</code>模式并显示，然后调用<code>next()</code>方法显示下一个提示布局 直到删除自己</p>
-</blockquote>
-<h4 id="1-开启next模式并显示"><a href="#1-开启next模式并显示" class="headerlink" title="1. 开启next模式并显示"></a>1. 开启next模式并显示</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line">    /**</div><div class="line">     * 显示 next模式 我知道了提示高亮布局</div><div class="line">     * @param view id为R.id.iv_known的控件</div><div class="line">     * @author isanwenyu@163.com</div><div class="line">     */</div><div class="line">    public  void showNextKnownTipView(View view)</div><div class="line">    &#123;</div><div class="line">        mHightLight = new HighLight(MainActivity.this)//</div><div class="line">                .autoRemove(false)//设置背景点击高亮布局自动移除为false 默认为true</div><div class="line">//                .intercept(false)//设置拦截属性为false 高亮布局不影响后面布局的滑动效果</div><div class="line">                .intercept(true)//拦截属性默认为true 使下方callback生效</div><div class="line">                .enableNext()//开启next模式并通过show方法显示 然后通过调用next()方法切换到下一个提示布局，直到移除自身</div><div class="line">//                .setClickCallback(new HighLight.OnClickCallback() &#123;</div><div class="line">//                    @Override</div><div class="line">//                    public void onClick() &#123;</div><div class="line">//                        Toast.makeText(MainActivity.this, &quot;clicked and remove HightLight view by yourself&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">//                        remove(null);</div><div class="line">//                    &#125;</div><div class="line">//                &#125;)</div><div class="line">                .anchor(findViewById(R.id.id_container))//如果是Activity上增加引导层，不需要设置anchor</div><div class="line">                .addHighLight(R.id.btn_rightLight,R.layout.info_known,new OnLeftPosCallback(45),new RectLightShape())</div><div class="line">                .addHighLight(R.id.btn_light,R.layout.info_known,new OnRightPosCallback(5),new BaseLightShape(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,5,getResources().getDisplayMetrics()), TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,5,getResources().getDisplayMetrics()),0) &#123;</div><div class="line">                    @Override</div><div class="line">                    protected void resetRectF4Shape(RectF viewPosInfoRectF, float dx, float dy) &#123;</div><div class="line">                        //缩小高亮控件范围</div><div class="line">                        viewPosInfoRectF.inset(dx,dy);</div><div class="line">                    &#125;</div><div class="line"></div><div class="line">                    @Override</div><div class="line">                    protected void drawShape(Bitmap bitmap, HighLight.ViewPosInfo viewPosInfo) &#123;</div><div class="line">                        //custom your hight light shape 自定义高亮形状</div><div class="line">                        Canvas canvas = new Canvas(bitmap);</div><div class="line">                        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);</div><div class="line">                        paint.setDither(true);</div><div class="line">                        paint.setAntiAlias(true);</div><div class="line">                        //blurRadius必须大于0</div><div class="line">                        if(blurRadius&gt;0)&#123;</div><div class="line">                            paint.setMaskFilter(new BlurMaskFilter(blurRadius, BlurMaskFilter.Blur.SOLID));</div><div class="line">                        &#125;</div><div class="line">                        RectF rectF = viewPosInfo.rectF;</div><div class="line">                        canvas.drawOval(rectF, paint);</div><div class="line">                    &#125;</div><div class="line">                &#125;)</div><div class="line">                .addHighLight(R.id.btn_bottomLight,R.layout.info_known,new OnTopPosCallback(),new CircleLightShape())</div><div class="line">                .addHighLight(view,R.layout.info_known,new OnBottomPosCallback(10),new OvalLightShape(5,5,20))</div><div class="line">                .setOnRemoveCallback(new HighLightInterface.OnRemoveCallback() &#123;//监听移除回调 intercept为true时生效</div><div class="line">                    @Override</div><div class="line">                    public void onRemove() &#123;</div><div class="line">                        Toast.makeText(MainActivity.this, &quot;The HightLight view has been removed&quot;, Toast.LENGTH_SHORT).show();</div><div class="line"></div><div class="line">                    &#125;</div><div class="line">                &#125;)</div><div class="line">                .setOnShowCallback(new HighLightInterface.OnShowCallback() &#123;//监听显示回调 intercept为true时生效</div><div class="line">                    @Override</div><div class="line">                    public void onShow() &#123;</div><div class="line">                        Toast.makeText(MainActivity.this, &quot;The HightLight view has been shown&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">        mHightLight.show();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h4 id="2-调用next-方法依次显示之前添加到提示布局-最后自动移除"><a href="#2-调用next-方法依次显示之前添加到提示布局-最后自动移除" class="headerlink" title="2. 调用next()方法依次显示之前添加到提示布局 最后自动移除"></a>2. 调用next()方法依次显示之前添加到提示布局 最后自动移除</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">     * 响应所有R.id.iv_known的控件的点击事件</div><div class="line">     * &lt;p&gt;</div><div class="line">     *  移除高亮布局</div><div class="line">     * &lt;/p&gt;</div><div class="line">     * </div><div class="line">     * @param view</div><div class="line">     */</div><div class="line">    public void clickKnown(View view)</div><div class="line">    &#123;</div><div class="line">        if(mHightLight.isShowing() &amp;&amp; mHightLight.isNext())//如果开启next模式</div><div class="line">        &#123;</div><div class="line">            mHightLight.next();</div><div class="line">        &#125;else</div><div class="line">        &#123;</div><div class="line">            remove(null);</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h3 id="Nomarl-Mode-普通模式"><a href="#Nomarl-Mode-普通模式" class="headerlink" title="Nomarl Mode 普通模式"></a>Nomarl Mode 普通模式</h3><p>对于上面效果图中的一个需要高亮的View，需要通过下面的代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">    /**</div><div class="line">     * 显示我知道了提示高亮布局</div><div class="line">     * @param view id为R.id.iv_known的控件</div><div class="line">     * @author isanwenyu@163.com</div><div class="line">     */</div><div class="line">    public  void showKnownTipView(View view)</div><div class="line">    &#123;</div><div class="line">        mHightLight = new HighLight(MainActivity.this)//</div><div class="line">                .autoRemove(false)//设置背景点击高亮布局自动移除为false 默认为true</div><div class="line">                .intercept(false)//设置拦截属性为false 高亮布局不影响后面布局的滑动效果 而且使下方点击回调失效</div><div class="line">                .setClickCallback(new HighLight.OnClickCallback() &#123;</div><div class="line">                    @Override</div><div class="line">                    public void onClick() &#123;</div><div class="line">                        Toast.makeText(MainActivity.this, &quot;clicked and remove HightLight view by yourself&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">                        remove(null);</div><div class="line">                    &#125;</div><div class="line">                &#125;)</div><div class="line">                .anchor(findViewById(R.id.id_container))//如果是Activity上增加引导层，不需要设置anchor</div><div class="line">                .addHighLight(R.id.btn_rightLight,R.layout.info_known,new OnLeftPosCallback(45),new RectLightShape())</div><div class="line">                .addHighLight(R.id.btn_light,R.layout.info_known,new OnRightPosCallback(5),new CircleLightShape(0,0,0))</div><div class="line">                .addHighLight(R.id.btn_bottomLight,R.layout.info_known,new OnTopPosCallback(),new CircleLightShape())</div><div class="line">                .addHighLight(view,R.layout.info_known,new OnBottomPosCallback(10),new OvalLightShape(5,5,20));</div><div class="line">        mHightLight.show();</div><div class="line"></div><div class="line">//        //added by isanwenyu@163.com 设置监听器只有最后一个添加到HightLightView的knownView响应了事件</div><div class="line">//        //优化方案：在布局中声明onClick方法 &#123;@link #clickKnown(view)&#125;响应所有R.id.iv_known的控件的点击事件</div><div class="line">//        View decorLayout = mHightLight.getHightLightView();</div><div class="line">//        ImageView knownView = (ImageView) decorLayout.findViewById(R.id.iv_known);</div><div class="line">//        knownView.setOnClickListener(new View.OnClickListener()</div><div class="line">//          &#123;</div><div class="line">//            @Override</div><div class="line">//            public void onClick(View view) &#123;</div><div class="line">//                remove(null);</div><div class="line">//            &#125;</div><div class="line">//        &#125;);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>anchor()指你需要在哪个view上加一层透明的蒙版，如果不设置，默认为android.R.id.content。也就是说，该库支持局部范围内去高亮某些View.</p>
-<p>addHighLight包含3个参数：</p>
-<ul>
-<li>参数1：需要高亮view的id，这个没什么说的</li>
-<li>参数2：你的tip布局的layoutId，也就是箭头和文字，你自己编写个布局，参考demo即可。</li>
-<li><p>参数3：是个接口<code>HighLight.OnPosCallback</code>，接口包含一系列的位置信息，如下</p>
-  <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * @param rightMargin 高亮view在anchor中的右边距</div><div class="line"> * @param bottomMargin 高亮view在anchor中的下边距</div><div class="line"> * @param rectF 高亮view的l,t,r,b,w,h都有</div><div class="line"> * @param marginInfo 设置你的布局的位置，一般设置l,t或者r,b</div><div class="line"> */</div></pre></td></tr></table></figure>
-<p>  哈，提供了一堆的位置信息，但是你要做的，只是去设置<code>leftMargin</code>和<code>topMargin</code>；或者<code>rightMargin</code>和<code>bottomMargin</code>。</p>
-<p>  <code>OnBaseCallback</code>抽象类实现接口<code>HighLight.OnPosCallback</code>,内置实现四个子类：<code>OnLeftPosCallback</code>（左）、<code>OnRightPosCallback</code>（右）、<code>OnTopPosCallback</code>（上）、<code>OnBottomPosCallback</code>（下）。</p>
-<p>  目前看起来，我觉得位置信息够了，当然如果你有想法欢迎提出。</p>
-<p>  哈，是不是参数比较多，看着烦，如果你图省事，可以提供一个枚举，提供4个或者8个默认的位置，这个事呢，dota1群<code>@李志云</code>已经完成~认识的话可以去找他。</p>
-</li>
-<li><p>参数4：高亮形状  抽象类<code>BaseLightShape(dx,dy,blurRadius)</code></p>
-  <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * @param dx 水平方向偏移</div><div class="line"> * @param dy 垂直方向偏移</div><div class="line"> * @param blurRadius 模糊半径 默认15px 0不模糊</div><div class="line"> */</div></pre></td></tr></table></figure>
-<p> 两个抽象方法：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * reset RectF for Shape by dx and dy. 根据dx，dy重置viewPosInfoRectF大小</div><div class="line"> * @param viewPosInfoRectF</div><div class="line"> * @param dx</div><div class="line"> * @param dy</div><div class="line"> */</div><div class="line">protected abstract void resetRectF4Shape(RectF viewPosInfoRectF, float dx, float dy);</div><div class="line"></div><div class="line">/**</div><div class="line"> * draw shape into bitmap. 绘制高亮形状到传递过来的图片画布上</div><div class="line"> * @param bitmap</div><div class="line"> * @param viewPosInfo</div><div class="line"> * @see zhy.com.highlight.view.HightLightView#addViewForEveryTip(HighLight.ViewPosInfo)</div><div class="line"> * @see HightLightView#buildMask()</div><div class="line"> */</div><div class="line">protected abstract void drawShape(Bitmap bitmap, HighLight.ViewPosInfo viewPosInfo);</div></pre></td></tr></table></figure>
-<p> <code>BaseLightShape</code>的实现类：<code>RectLightShape</code>（矩形）、<code>CircleLightShape</code>（圆形）、<code>OvalLightShape</code>（椭圆），具体实现请查看代码</p>
-</li>
-</ul>
-<h2 id="更改历史"><a href="#更改历史" class="headerlink" title="更改历史"></a>更改历史</h2><ol>
-<li><code>A</code> 2016/9/26 添加点击高亮布局背景是否自动移除标志<code>autoRemove</code></li>
-<li><code>A</code> 2016/10/4 给<code>HighLightView</code>添加唯一id防止重复添加</li>
-<li><code>A</code> 2016/10/5 添加Next模式-按顺序依次显示添加的提示布局</li>
-<li><code>I</code> 2016/10/27 扩展高亮形状<code>LightShape</code>支持开发者自定义配置</li>
-<li><code>A</code> 2016/11/01 为<code>HighLight</code>添加接口约束,显示与隐藏监听及<code>isShowing</code>属性</li>
-<li><code>I</code> 2016/11/02 优化<code>HightLightView</code>中提示布局添加与显示</li>
-</ol>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
-<li><p>添加的提示布局怎么在屏幕中水平居中显示（垂直居中类似）</p>
-<blockquote>
-<p>提示布局根布局<code>android:layout_width=&quot;match_parent&quot;</code> <code>android:gravity=&quot;center_horizontal&quot;</code></p>
-<p>自定义定位参数<code>rightMargin=0</code></p>
-</blockquote>
-</li>
-<li><p>怎么针对同一个高亮控件添加多个提示布局</p>
-<blockquote>
-<p><code>addHighLight</code> 多次添加 第一个参数使用同一个控件id即可</p>
-</blockquote>
-</li>
-<li><p>高亮布局显示后 底层布局有变化 怎么更新高亮布局</p>
-<blockquote>
-<p><code>mHighLight.getHightLightView().requestLayout()</code> 掉用后高亮布局会重新布局及绘制</p>
-</blockquote>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/29/gradle-push-repo-maven/" itemprop="url">
-                  如何把Android Studio项目发布到中央仓库JCenter/第三方仓库JitPack中
-                </a>
+                如何把Android Studio项目发布到中央仓库JCenter/第三方仓库JitPack中
               
             
           </h1>
@@ -525,6 +347,11 @@
           
 
           
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
         </div>
       </header>
     
@@ -536,9 +363,7 @@
       
 
       
-        
-          
-            <blockquote>
+        <blockquote>
 <p>前两天在<code>Bintray</code>中我把<code>maven</code>中的<a href="https://github.com/isanwenyu/LazyFragment.git" target="_blank" rel="external">LazyFragment</a>开源项目删除并重新上传。由于之前该repo已经添加到<code>JCenter</code>中，当我再次上传成功后再次往<code>JCenter</code>中添加时，<code>Bintray</code>返回消息：<code>The package you requested to include already exists in JCenter</code>，并且看到我<code>maven</code>仓库中有了名为<strong>LazyFragment-{我的用户名}</strong>的临时<code>repo</code>。当时一脸懵逼，欲哭无泪！在搜索相关问题未果后，重新上传了一个新版本repo，重新关联到<code>JCenter</code>中同包名的repo，并合并之前的临时repo到新发布的<code>maven repo</code>中。因此整理流程如下，供大家参考。</p>
 </blockquote>
 <h1 id="Android仓库"><a href="#Android仓库" class="headerlink" title="Android仓库"></a>Android仓库</h1><blockquote>
@@ -625,189 +450,123 @@
 </li>
 </ol>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/pay/wechat-reward-image.jpg" alt="isanwenyu@163.com WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/pay/alipay-reward-image.jpg" alt="isanwenyu@163.com Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
     </div>
+  </div>
 
-    <div>
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/09/hello-world/" itemprop="url">
-                  「Stay hungry. Stay foolish.」
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-09T10:30:52+08:00" content="2016-09-09">
-              2016-09-09
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Life/" itemprop="url" rel="index">
-                    <span itemprop="name">Life</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/gradle/" rel="tag">#gradle</a>
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/09/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/09/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <blockquote>
-<p>欢迎来到我的博客！ 爱代码，爱学习，努力做一个有追求的码农！</p>
-</blockquote>
-<h3 id="出处"><a href="#出处" class="headerlink" title="出处"></a>出处</h3><p>2005 年乔布斯在斯坦福的演讲中，说道：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">当我年轻的时候，有一本叫做《整个地球的目录》振聋发聩的杂志，它是我们那一代人的圣经之一。它是一个叫 Stewart Brand 的家伙在离这里不远的 Menlo Park 书写的，他象诗一般神奇地将这本书带到了这个世界。那是六十年代后期，在个人电脑出现之前，所以这本书全部是用打字机、剪刀还有偏光镜制作的。有点像用软皮包装的 Google，在 Google 出现三十五年之前：这是理想主义的，其中有许多灵巧的工具和伟大的想法。</div><div class="line">Stewart 和他的伙伴出版了几期的《整个地球的目录》，当它完成了自己使命的时候，他们做出了最后一期的目录。那是在七十年代的中期，你们的时代。在最后一期的封底上是清晨乡村公路的照片，如果你有冒险精神的话，你可以自己找到这条路的。在照片之下有这样一段话：“求知若饥，虚心若愚。”这是他们停刊的告别语。“求知若饥，虚心若愚。”我总是希望自己能够那样，现在，在你们即将毕业，开始新的旅程的时候，我也希望你们能做到这样：</div><div class="line">Stay Hungry . Stay Foolish.</div></pre></td></tr></table></figure>
-<p>这就是乔布斯所说的「Stay Hungry . Stay Foolish.」的来源，1972 年《整个地球的目录》（Whole Earth Catalog） 的最后一期封底。</p>
-<p><img src="http://ww4.sinaimg.cn/large/801b780agw1f7ojful5cbj20jg0qhwg9.jpg" alt="封底"></p>
-<h3 id="有意思的释义"><a href="#有意思的释义" class="headerlink" title="有意思的释义"></a>有意思的释义</h3><ul>
-<li>保持饥饿，保持愚蠢</li>
-<li>求知若饥，虚心若愚</li>
-<li>做个吃货，做个二货</li>
-<li>金正日死前给朝鲜人民的遗言是：Stay hungry, stay foolish. </li>
-</ul>
-<h3 id="正统的翻译"><a href="#正统的翻译" class="headerlink" title="正统的翻译"></a>正统的翻译</h3><p>转一下StackExchange上的解释，可能英语母语的人的解释（而且是最高票数的解释）参考价值大一点，：<a href="http://english.stackexchange.com/questions/44538/what-does-the-phrase-stay-hungry-stay-foolish-mean" target="_blank" rel="external">quotes - What does the phrase “Stay Hungry. Stay Foolish” mean?
-</a></p>
-<blockquote>
-<p>   Stay Hungry.</p>
-</blockquote>
-<p>Never be satisfied, and always push yourself.<br>永远不满足，不停地push你自己。</p>
-<blockquote>
-<p>  Stay Foolish.</p>
-</blockquote>
-<p>Do (or be willing to keep trying) the things people say cannot be done.<br>做那些别人认为不可能搞定的事情。 </p>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ul>
-<li><a href="http://www.zhihu.com/question/20078678" target="_blank" rel="external">http://www.zhihu.com/question/20078678</a></li>
-<li><a href="https://www.zhihu.com/question/19557797/answer/16544773" target="_blank" rel="external">https://www.zhihu.com/question/19557797/answer/16544773</a></li>
-</ul>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/09/hello-world/" rel="next" title="「Stay hungry. Stay foolish.」">
+                <i class="fa fa-chevron-left"></i> 「Stay hungry. Stay foolish.」
+              </a>
+            
+          </div>
 
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/23/HighLight-latest-usage/" rel="prev" title="一个用于app指向性功能高亮库：HighLight的最新用法">
+                一个用于app指向性功能高亮库：HighLight的最新用法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/09/29/gradle-push-repo-maven/"
+     data-title="如何把Android Studio项目发布到中央仓库JCenter/第三方仓库JitPack中"
+     data-content=""
+     data-url="https://isanwenyu.github.io/2016/09/29/gradle-push-repo-maven/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/29/gradle-push-repo-maven/"
+           data-title="如何把Android Studio项目发布到中央仓库JCenter/第三方仓库JitPack中" data-url="https://isanwenyu.github.io/2016/09/29/gradle-push-repo-maven/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -827,8 +586,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -905,6 +673,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android仓库"><span class="nav-number">1.</span> <span class="nav-text">Android仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JCenter"><span class="nav-number">1.1.</span> <span class="nav-text">JCenter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven-Central"><span class="nav-number">1.2.</span> <span class="nav-text">Maven Central</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gradle获取library"><span class="nav-number">1.3.</span> <span class="nav-text">gradle获取library</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用gradle发布项目到JCenter中央仓库"><span class="nav-number">2.</span> <span class="nav-text">使用gradle发布项目到JCenter中央仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注册bintray"><span class="nav-number">2.1.</span> <span class="nav-text">注册bintray</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码中配置"><span class="nav-number">2.2.</span> <span class="nav-text">代码中配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分离成多个Module"><span class="nav-number">2.2.1.</span> <span class="nav-text">分离成多个Module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加bintray插件"><span class="nav-number">2.2.2.</span> <span class="nav-text">添加bintray插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加bintray认证"><span class="nav-number">2.2.3.</span> <span class="nav-text">添加bintray认证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改Module中的build-gradle"><span class="nav-number">2.2.4.</span> <span class="nav-text">修改Module中的build.gradle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传到bintray"><span class="nav-number">2.3.</span> <span class="nav-text">上传到bintray</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开Android-Studio的终端"><span class="nav-number">2.3.1.</span> <span class="nav-text">打开Android Studio的终端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#或直接通过gradle面板-依次双击执行build-assemble-publishing-bintrayUpload"><span class="nav-number">2.3.2.</span> <span class="nav-text">或直接通过gradle面板 依次双击执行build/assemble publishing/bintrayUpload</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意："><span class="nav-number">2.3.2.1.</span> <span class="nav-text">注意：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步到JCenter"><span class="nav-number">2.4.</span> <span class="nav-text">同步到JCenter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本更新"><span class="nav-number">2.5.</span> <span class="nav-text">版本更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.6.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发布到JitPack"><span class="nav-number">3.</span> <span class="nav-text">发布到JitPack</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#登录JitPack，可以直接通过GitHub授权登陆"><span class="nav-number">3.1.</span> <span class="nav-text">登录JitPack，可以直接通过GitHub授权登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在编辑框中输入GitHub-Reop的网址，完成后点击LookUp"><span class="nav-number">3.2.</span> <span class="nav-text">在编辑框中输入GitHub Reop的网址，完成后点击LookUp</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加JitPack仓库到根目录的build-gradle中"><span class="nav-number">3.2.1.</span> <span class="nav-text">添加JitPack仓库到根目录的build.gradle中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加引用"><span class="nav-number">3.2.2.</span> <span class="nav-text">添加引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意：-1"><span class="nav-number">3.3.</span> <span class="nav-text">注意：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引用"><span class="nav-number">4.</span> <span class="nav-text">引用</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -1024,6 +803,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
