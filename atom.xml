@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://isanwenyu.github.io/"/>
-  <updated>2016-12-02T10:23:34.000Z</updated>
+  <updated>2016-12-05T07:17:30.000Z</updated>
   <id>https://isanwenyu.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://isanwenyu.github.io/2016/11/23/HighLight-latest-usage/"/>
     <id>https://isanwenyu.github.io/2016/11/23/HighLight-latest-usage/</id>
     <published>2016-11-23T03:25:46.000Z</published>
-    <updated>2016-12-02T10:23:34.000Z</updated>
+    <updated>2016-12-05T07:17:30.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Highlight"><a href="#Highlight" class="headerlink" title="Highlight"></a>Highlight</h1><p><a href="https://bintray.com/isanwenyu/maven/Highlight/_latestVersion" target="_blank" rel="external"> <img src="https://api.bintray.com/packages/isanwenyu/maven/Highlight/images/download.svg" alt="Download"> </a></p>
 <blockquote>
@@ -90,6 +90,11 @@
 <li><p>页面加载完成，自动显示，应该放在哪里调用？</p>
 <pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public void onWindowFocusChanged(boolean hasFocus) &#123;</div><div class="line">    super.onWindowFocusChanged(hasFocus);</div><div class="line">    //界面初始化后显示高亮布局</div><div class="line">    mHightLight.show();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre></li>
+<li><p>如果使用viewpager非第一页高亮布局 有可能定位到屏幕外</p>
+<blockquote>
+<p>感谢 @liyanxi 提供的方案 会更新到 <a href="https://github.com/isanwenyu/Highlight/blob/master/README.md" target="_blank" rel="external">README.md</a></p>
+</blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//自定义高亮形状</div><div class="line">final HighLight.LightShape mLightShape = new BaseLightShape() &#123;</div><div class="line">    @Override</div><div class="line">    protected void resetRectF4Shape(RectF viewPosInfoRectF, float dx, float dy) &#123;</div><div class="line">       //重置viewPosInfoRectF 模掉屏幕宽度 得到真实的left</div><div class="line">        viewPosInfoRectF.offsetTo(viewPosInfoRectF.left % DeviceUtil.getScreenDispaly(getActivity())[0], viewPosInfoRectF.top);</div><div class="line">    &#125;</div><div class="line">  ......</div></pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
     
@@ -213,9 +218,9 @@
       <category term="Android" scheme="https://isanwenyu.github.io/categories/Android/"/>
     
     
-      <category term="Android" scheme="https://isanwenyu.github.io/tags/Android/"/>
-    
       <category term="gradle" scheme="https://isanwenyu.github.io/tags/gradle/"/>
+    
+      <category term="Android" scheme="https://isanwenyu.github.io/tags/Android/"/>
     
   </entry>
   
