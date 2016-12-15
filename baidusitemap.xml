@@ -4,8 +4,30 @@
 
     
   <url>
+    <loc>https://isanwenyu.github.io/2016/12/14/big-shell/</loc>
+    <lastmod>2016-12-15T15:43:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>一个逼格满满的Shell Oh-My-Zsh</title>
+        <pubTime>2016-12-14T09:04:35.000Z</pubTime>
+        
+        <tag>Shell</tag>
+         
+        <tag>Mac</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tools" url="https://isanwenyu.github.io/categories/Tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://isanwenyu.github.io/2016/11/23/HighLight-latest-usage/</loc>
-    <lastmod>2016-12-06T02:24:38.000Z</lastmod>
+    <lastmod>2016-12-15T07:27:10.000Z</lastmod>
     <data>
         <display>
         <title>一个用于app指向性功能高亮库：HighLight的最新用法</title>

@@ -108,7 +108,7 @@
 引入下载代码">
 <meta property="og:image" content="https://api.bintray.com/packages/isanwenyu/maven/Highlight/images/download.svg">
 <meta property="og:image" content="http://oda2i06ov.bkt.clouddn.com/high_light_demo.gif">
-<meta property="og:updated_time" content="2016-12-06T02:24:38.000Z">
+<meta property="og:updated_time" content="2016-12-15T07:27:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个用于app指向性功能高亮库：HighLight的最新用法">
 <meta name="twitter:description" content="Highlight  
@@ -390,7 +390,7 @@
 <h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><h3 id="Next-Mode-下一步模式"><a href="#Next-Mode-下一步模式" class="headerlink" title="Next Mode 下一步模式"></a>Next Mode 下一步模式</h3><blockquote>
 <p>调用<code>enableNext()</code>开启<code>Next</code>模式并显示，然后调用<code>next()</code>方法显示下一个提示布局 直到删除自己</p>
 </blockquote>
-<h4 id="1-开启next模式并显示"><a href="#1-开启next模式并显示" class="headerlink" title="1. 开启next模式并显示"></a>1. 开启next模式并显示</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">    /**</div><div class="line">     * 显示 next模式 我知道了提示高亮布局</div><div class="line">     * @param view id为R.id.iv_known的控件</div><div class="line">     * @author isanwenyu@163.com</div><div class="line">     */</div><div class="line">    public  void showNextKnownTipView(View view)</div><div class="line">    &#123;</div><div class="line">        mHightLight = new HighLight(MainActivity.this)//</div><div class="line">                .autoRemove(false)//设置背景点击高亮布局自动移除为false 默认为true</div><div class="line">//                .intercept(false)//设置拦截属性为false 高亮布局不影响后面布局的滑动效果</div><div class="line">                .intercept(true)//拦截属性默认为true 使下方ClickCallback生效</div><div class="line">                .enableNext()//开启next模式并通过show方法显示 然后通过调用next()方法切换到下一个提示布局，直到移除自身</div><div class="line">//                .setClickCallback(new HighLight.OnClickCallback() &#123;</div><div class="line">//                    @Override</div><div class="line">//                    public void onClick() &#123;</div><div class="line">//                        Toast.makeText(MainActivity.this, &quot;clicked and remove HightLight view by yourself&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">//                        remove(null);</div><div class="line">//                    &#125;</div><div class="line">//                &#125;)</div><div class="line">                .anchor(findViewById(R.id.id_container))//如果是Activity上增加引导层，不需要设置anchor</div><div class="line">                .addHighLight(R.id.btn_rightLight,R.layout.info_known,new OnLeftPosCallback(45),new RectLightShape())</div><div class="line">                .addHighLight(R.id.btn_light,R.layout.info_known,new OnRightPosCallback(5),new BaseLightShape(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,5,getResources().getDisplayMetrics()), TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,5,getResources().getDisplayMetrics()),0) &#123;</div><div class="line">                    @Override</div><div class="line">                    protected void resetRectF4Shape(RectF viewPosInfoRectF, float dx, float dy) &#123;</div><div class="line">                        //缩小高亮控件范围</div><div class="line">                        viewPosInfoRectF.inset(dx,dy);</div><div class="line">                    &#125;</div><div class="line"></div><div class="line">                    @Override</div><div class="line">                    protected void drawShape(Bitmap bitmap, HighLight.ViewPosInfo viewPosInfo) &#123;</div><div class="line">                        //custom your hight light shape 自定义高亮形状</div><div class="line">                        Canvas canvas = new Canvas(bitmap);</div><div class="line">                        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);</div><div class="line">                        paint.setDither(true);</div><div class="line">                        paint.setAntiAlias(true);</div><div class="line">                        //blurRadius必须大于0</div><div class="line">                        if(blurRadius&gt;0)&#123;</div><div class="line">                            paint.setMaskFilter(new BlurMaskFilter(blurRadius, BlurMaskFilter.Blur.SOLID));</div><div class="line">                        &#125;</div><div class="line">                        RectF rectF = viewPosInfo.rectF;</div><div class="line">                        canvas.drawOval(rectF, paint);</div><div class="line">                    &#125;</div><div class="line">                &#125;)</div><div class="line">                .addHighLight(R.id.btn_bottomLight,R.layout.info_known,new OnTopPosCallback(),new CircleLightShape())</div><div class="line">                .addHighLight(view,R.layout.info_known,new OnBottomPosCallback(10),new OvalLightShape(5,5,20))</div><div class="line">                .setOnRemoveCallback(new HighLightInterface.OnRemoveCallback() &#123;//监听移除回调 </div><div class="line">                    @Override</div><div class="line">                    public void onRemove() &#123;</div><div class="line">                        Toast.makeText(MainActivity.this, &quot;The HightLight view has been removed&quot;, Toast.LENGTH_SHORT).show();</div><div class="line"></div><div class="line">                    &#125;</div><div class="line">                &#125;)</div><div class="line">                .setOnShowCallback(new HighLightInterface.OnShowCallback() &#123;//监听显示回调</div><div class="line">                    @Override</div><div class="line">                    public void onShow(HightLightView hightLightView) &#123;</div><div class="line">                        Toast.makeText(MainActivity.this, &quot;The HightLight view has been shown&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">                    &#125;</div><div class="line">                &#125;).setOnNextCallback(new HighLightInterface.OnNextCallback() &#123;</div><div class="line">                    @Override</div><div class="line">                    public void onNext(HightLightView hightLightView, View targetView, View tipView) &#123;</div><div class="line">                        // targetView 目标按钮 tipView添加的提示布局 可以直接找到&apos;我知道了&apos;按钮添加监听事件等处理</div><div class="line">                        Toast.makeText(MainActivity.this, &quot;The HightLight show next TipView，targetViewID:&quot;+(targetView==null?null:targetView.getId())+&quot;,tipViewID:&quot;+(tipView==null?null:tipView.getId()), Toast.LENGTH_SHORT).show();</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">        mHightLight.show();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h4 id="1-开启next模式并显示"><a href="#1-开启next模式并显示" class="headerlink" title="1. 开启next模式并显示"></a>1. 开启next模式并显示</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">    /**</div><div class="line">     * 显示 next模式 我知道了提示高亮布局</div><div class="line">     * @param view id为R.id.iv_known的控件</div><div class="line">     * @author isanwenyu@163.com</div><div class="line">     */</div><div class="line">    public  void showNextKnownTipView(View view)</div><div class="line">    &#123;</div><div class="line">        mHightLight = new HighLight(MainActivity.this)//</div><div class="line">                .autoRemove(false)//设置背景点击高亮布局自动移除为false 默认为true</div><div class="line">//                .intercept(false)//设置拦截属性为false 高亮布局不影响后面布局的滑动效果</div><div class="line">                .intercept(true)//拦截属性默认为true 使下方ClickCallback生效</div><div class="line">                .enableNext()//开启next模式并通过show方法显示 然后通过调用next()方法切换到下一个提示布局，直到移除自身</div><div class="line">//                .setClickCallback(new HighLight.OnClickCallback() &#123;</div><div class="line">//                    @Override</div><div class="line">//                    public void onClick() &#123;</div><div class="line">//                        Toast.makeText(MainActivity.this, &quot;clicked and remove HightLight view by yourself&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">//                        remove(null);</div><div class="line">//                    &#125;</div><div class="line">//                &#125;)</div><div class="line">                .anchor(findViewById(R.id.id_container))//如果是Activity上增加引导层，不需要设置anchor</div><div class="line">                .addHighLight(R.id.btn_rightLight,R.layout.info_known,new OnLeftPosCallback(45),new RectLightShape(0,0,15,0,0))//矩形去除圆角</div><div class="line">                .addHighLight(R.id.btn_light,R.layout.info_known,new OnRightPosCallback(5),new BaseLightShape(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,5,getResources().getDisplayMetrics()), TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,5,getResources().getDisplayMetrics()),0) &#123;</div><div class="line">                    @Override</div><div class="line">                    protected void resetRectF4Shape(RectF viewPosInfoRectF, float dx, float dy) &#123;</div><div class="line">                        //缩小高亮控件范围</div><div class="line">                        viewPosInfoRectF.inset(dx,dy);</div><div class="line">                    &#125;</div><div class="line"></div><div class="line">                    @Override</div><div class="line">                    protected void drawShape(Bitmap bitmap, HighLight.ViewPosInfo viewPosInfo) &#123;</div><div class="line">                        //custom your hight light shape 自定义高亮形状</div><div class="line">                        Canvas canvas = new Canvas(bitmap);</div><div class="line">                        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);</div><div class="line">                        paint.setDither(true);</div><div class="line">                        paint.setAntiAlias(true);</div><div class="line">                        //blurRadius必须大于0</div><div class="line">                        if(blurRadius&gt;0)&#123;</div><div class="line">                            paint.setMaskFilter(new BlurMaskFilter(blurRadius, BlurMaskFilter.Blur.SOLID));</div><div class="line">                        &#125;</div><div class="line">                        RectF rectF = viewPosInfo.rectF;</div><div class="line">                        canvas.drawOval(rectF, paint);</div><div class="line">                    &#125;</div><div class="line">                &#125;)</div><div class="line">                .addHighLight(R.id.btn_bottomLight,R.layout.info_known,new OnTopPosCallback(),new CircleLightShape())</div><div class="line">                .addHighLight(view,R.layout.info_known,new OnBottomPosCallback(10),new OvalLightShape(5,5,20))</div><div class="line">                .setOnRemoveCallback(new HighLightInterface.OnRemoveCallback() &#123;//监听移除回调 </div><div class="line">                    @Override</div><div class="line">                    public void onRemove() &#123;</div><div class="line">                        Toast.makeText(MainActivity.this, &quot;The HightLight view has been removed&quot;, Toast.LENGTH_SHORT).show();</div><div class="line"></div><div class="line">                    &#125;</div><div class="line">                &#125;)</div><div class="line">                .setOnShowCallback(new HighLightInterface.OnShowCallback() &#123;//监听显示回调</div><div class="line">                    @Override</div><div class="line">                    public void onShow(HightLightView hightLightView) &#123;</div><div class="line">                        Toast.makeText(MainActivity.this, &quot;The HightLight view has been shown&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">                    &#125;</div><div class="line">                &#125;).setOnNextCallback(new HighLightInterface.OnNextCallback() &#123;</div><div class="line">                    @Override</div><div class="line">                    public void onNext(HightLightView hightLightView, View targetView, View tipView) &#123;</div><div class="line">                        // targetView 目标按钮 tipView添加的提示布局 可以直接找到&apos;我知道了&apos;按钮添加监听事件等处理</div><div class="line">                        Toast.makeText(MainActivity.this, &quot;The HightLight show next TipView，targetViewID:&quot;+(targetView==null?null:targetView.getId())+&quot;,tipViewID:&quot;+(tipView==null?null:tipView.getId()), Toast.LENGTH_SHORT).show();</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">        mHightLight.show();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <h4 id="2-调用next-方法依次显示之前添加到提示布局-最后自动移除"><a href="#2-调用next-方法依次显示之前添加到提示布局-最后自动移除" class="headerlink" title="2. 调用next()方法依次显示之前添加到提示布局 最后自动移除"></a>2. 调用next()方法依次显示之前添加到提示布局 最后自动移除</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">     * 响应所有R.id.iv_known的控件的点击事件</div><div class="line">     * &lt;p&gt;</div><div class="line">     *  移除高亮布局</div><div class="line">     * &lt;/p&gt;</div><div class="line">     *</div><div class="line">     * @param view</div><div class="line">     */</div><div class="line">    public void clickKnown(View view)</div><div class="line">    &#123;</div><div class="line">        if(mHightLight.isShowing() &amp;&amp; mHightLight.isNext())//如果开启next模式</div><div class="line">        &#123;</div><div class="line">            mHightLight.next();</div><div class="line">        &#125;else</div><div class="line">        &#123;</div><div class="line">            remove(null);</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <h4 id="3-下一步回调监听"><a href="#3-下一步回调监听" class="headerlink" title="3. 下一步回调监听"></a>3. 下一步回调监听</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 下一个回调监听 只有Next模式下生效</div><div class="line"> */</div><div class="line">public static interface OnNextCallback &#123;</div><div class="line">    /**</div><div class="line">     * 监听下一步动作</div><div class="line">     *</div><div class="line">     * @param hightLightView 高亮布局控件</div><div class="line">     * @param targetView     高亮目标控件</div><div class="line">     * @param tipView        高亮提示控件</div><div class="line">     */</div><div class="line">    void onNext(HightLightView hightLightView, View targetView, View tipView);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Nomarl-Mode-普通模式"><a href="#Nomarl-Mode-普通模式" class="headerlink" title="Nomarl Mode 普通模式"></a>Nomarl Mode 普通模式</h3><p>对于上面效果图中的一个需要高亮的View，需要通过下面的代码</p>
@@ -414,15 +414,90 @@
 <p> <code>BaseLightShape</code>的实现类：<code>RectLightShape</code>（矩形）、<code>CircleLightShape</code>（圆形）、<code>OvalLightShape</code>（椭圆），具体实现请查看代码</p>
 </li>
 </ul>
-<h2 id="更改历史"><a href="#更改历史" class="headerlink" title="更改历史"></a>更改历史</h2><ol>
-<li><code>A</code> 2016/9/26 添加点击高亮布局背景是否自动移除标志<code>autoRemove</code></li>
-<li><code>A</code> 2016/10/4 给<code>HighLightView</code>添加唯一id防止重复添加</li>
-<li><code>A</code> 2016/10/5 添加Next模式-按顺序依次显示添加的提示布局</li>
-<li><code>I</code> 2016/10/27 扩展高亮形状<code>LightShape</code>支持开发者自定义配置</li>
-<li><code>A</code> 2016/11/01 为<code>HighLight</code>添加接口约束,显示与隐藏监听及<code>isShowing</code>属性</li>
-<li><code>I</code> 2016/11/02 优化<code>HightLightView</code>中提示布局添加与显示</li>
-<li><code>I</code> 2016/12/02 显示及移除回调不依赖<code>intercept</code>属性</li>
-</ol>
+<h2 id="更改历史"><a href="#更改历史" class="headerlink" title="更改历史"></a>更改历史</h2><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>时间</th>
+<th>版本</th>
+<th>详情</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A</code></td>
+<td>2016/9/26</td>
+<td>v1.2.0</td>
+<td>添加点击高亮布局背景是否自动移除标志<code>autoRemove</code></td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>2016/10/5</td>
+<td>v1.3.0</td>
+<td>添加Next模式-按顺序依次显示添加的提示布局<br>&amp;&amp;给<code>HighLightView</code>添加唯一id防止重复添加</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>2016/10/8</td>
+<td>v1.3.1</td>
+<td>修复Next模式-HightLightView中校验mPostion问题</td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td>2016/10/27</td>
+<td>v1.4.0</td>
+<td>扩展高亮形状<code>LightShape</code>支持开发者自定义配置</td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>2016/11/01</td>
+<td>v1.5.0</td>
+<td>为<code>HighLight</code>添加接口约束</td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>2016/11/01</td>
+<td>v1.5.1</td>
+<td>显示与隐藏监听及<code>isShowing</code>属性</td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td>2016/11/02</td>
+<td>v1.5.2</td>
+<td>优化<code>HightLightView</code>中提示布局添加与显示 兼容<code>AutoFrameLayout</code></td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>2016/11/16</td>
+<td>v1.6.0</td>
+<td>添加椭圆高亮形状&amp;修复显示问题</td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>2016/11/25</td>
+<td>v1.7.0</td>
+<td>添加下一个监听 回调返回当前的目标控件及提示控件</td>
+</tr>
+<tr>
+<td><code>R</code></td>
+<td>2016/12/02</td>
+<td>v1.7.1</td>
+<td>显示及移除回调不依赖<code>intercept</code>属性</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>2016/12/07</td>
+<td>v1.7.2</td>
+<td>修复#21 在<code>ViewPager</code>中用户获取目标布局位置信息错误</td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td>2016/12/14</td>
+<td>v1.7.3</td>
+<td><code>RectLightShape</code>构造函数添加x-radius和y-radius圆角半径属性</td>
+</tr>
+</tbody>
+</table>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
 <li><p>添加的提示布局怎么在屏幕中水平居中显示（垂直居中类似）</p>
 <blockquote>
@@ -510,6 +585,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/14/big-shell/" rel="prev" title="一个逼格满满的Shell Oh-My-Zsh">
+                一个逼格满满的Shell Oh-My-Zsh <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -603,7 +682,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -611,7 +690,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -620,7 +699,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
