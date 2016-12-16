@@ -102,7 +102,7 @@
 <meta property="og:image" content="http://oda2i06ov.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-30%20%E4%B8%8B%E5%8D%882.50.09.png">
 <meta property="og:image" content="http://oda2i06ov.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-29%20%E4%B8%8B%E5%8D%883.57.51.png">
 <meta property="og:image" content="http://oda2i06ov.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-29%20%E4%B8%8B%E5%8D%883.53.42.png">
-<meta property="og:updated_time" content="2016-09-30T07:24:27.000Z">
+<meta property="og:updated_time" content="2016-12-15T16:31:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何把Android Studio项目发布到中央仓库JCenter/第三方仓库JitPack中">
 <meta name="twitter:description" content="前两天在Bintray中我把maven中的LazyFragment开源项目删除并重新上传。由于之前该repo已经添加到JCenter中，当我再次上传成功后再次往JCenter中添加时，Bintray返回消息：The package you requested to include already exists in JCenter，并且看到我maven仓库中有了名为LazyFragment-{我">
@@ -379,7 +379,8 @@
 <blockquote>
 <p><strong>下面正式进行实现依赖的实现</strong></p>
 </blockquote>
-<h1 id="使用gradle发布项目到JCenter中央仓库"><a href="#使用gradle发布项目到JCenter中央仓库" class="headerlink" title="使用gradle发布项目到JCenter中央仓库"></a>使用gradle发布项目到JCenter中央仓库</h1><h2 id="注册bintray"><a href="#注册bintray" class="headerlink" title="注册bintray"></a>注册bintray</h2><p>首先要在<a href="https://bintray.com" target="_blank" rel="external">https://bintray.com</a> 中注册账号，注册都是很简单的就不所说了。<br>然后回到主页在你的<code>Owned Repositories</code>中看下你是否已经添加了<code>maven</code>。<br>图<br>第一次注册的应该没有，所以我们要先<code>New Repository</code>创建<code>maven</code></p>
+<h1 id="使用gradle发布项目到JCenter中央仓库"><a href="#使用gradle发布项目到JCenter中央仓库" class="headerlink" title="使用gradle发布项目到JCenter中央仓库"></a>使用gradle发布项目到JCenter中央仓库</h1><a id="more"></a>
+<h2 id="注册bintray"><a href="#注册bintray" class="headerlink" title="注册bintray"></a>注册bintray</h2><p>首先要在<a href="https://bintray.com" target="_blank" rel="external">https://bintray.com</a> 中注册账号，注册都是很简单的就不所说了。<br>然后回到主页在你的<code>Owned Repositories</code>中看下你是否已经添加了<code>maven</code>。<br>图<br>第一次注册的应该没有，所以我们要先<code>New Repository</code>创建<code>maven</code></p>
 <p><img src="http://oda2i06ov.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-29%20%E4%B8%8B%E5%8D%884.31.14.png" height="480"></p>
 <p>创建之后会自动跳转到<code>maven</code>中，你会发现没有<code>package</code>,我们可以<code>Add New Package</code>这种相信都会，我这里要说的是另外一种，我们直接在<code>Android Studio</code>中进行配置然后上传到<code>Bintray</code>。</p>
 <h2 id="代码中配置"><a href="#代码中配置" class="headerlink" title="代码中配置"></a>代码中配置</h2><h3 id="分离成多个Module"><a href="#分离成多个Module" class="headerlink" title="分离成多个Module"></a>分离成多个Module</h3><p>为了使别人能更好的使用，我们一般在实现自己的依赖的时候会把实现的该依赖的源码作为一个<code>Module</code>,再把实例代码作为<code>Application Module</code>。所以我们要事先处理好<code>Module</code>，下面是我弄好的示例</p>
@@ -656,7 +657,7 @@
               <span class="links-of-author-item">
                 <a href="http://weibo.com/isanwenyu" target="_blank" title="微博">
                   
-                    <i class="fa fa-fw fa-globe"></i>
+                    <i class="fa fa-fw fa-weibo"></i>
                   
                   微博
                 </a>

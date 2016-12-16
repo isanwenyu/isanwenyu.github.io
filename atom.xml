@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://isanwenyu.github.io/"/>
-  <updated>2016-12-15T15:43:29.000Z</updated>
+  <updated>2016-12-16T03:20:20.000Z</updated>
   <id>https://isanwenyu.github.io/</id>
   
   <author>
@@ -16,14 +16,14 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>一个逼格满满的Shell Oh-My-Zsh</title>
+    <title>一个BIGER满满的Shell：Oh-My-Zsh</title>
     <link href="https://isanwenyu.github.io/2016/12/14/big-shell/"/>
     <id>https://isanwenyu.github.io/2016/12/14/big-shell/</id>
     <published>2016-12-14T09:04:35.000Z</published>
-    <updated>2016-12-15T15:43:29.000Z</updated>
+    <updated>2016-12-16T03:20:20.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
-<p>Oh-My-Zsh 是一个开源项目，<a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh</a>，功能强大，有丰富的插件及主题，逼格满满，下面有介绍。</p>
+<p>Oh-My-Zsh 是一个开源项目，<a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh</a>，功能强大，有丰富的插件及主题，BIGER满满，下面有介绍。</p>
 </blockquote>
 <h2 id="快速预览"><a href="#快速预览" class="headerlink" title="快速预览"></a>快速预览</h2><p><img src="http://oda2i06ov.bkt.clouddn.com/big-shell-overview.gif" alt="image"></p>
 <h2 id="zsh是啥"><a href="#zsh是啥" class="headerlink" title="zsh是啥"></a>zsh是啥</h2><blockquote>
@@ -41,6 +41,7 @@
 </pre>
 
 </blockquote>
+<a id="more"></a>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="必要条件"><a href="#必要条件" class="headerlink" title="必要条件"></a>必要条件</h3><h4 id="1-系统"><a href="#1-系统" class="headerlink" title="1. 系统"></a>1. 系统</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (your OS is Windows)&#123;</div><div class="line">	return;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="2-Zsh-需要安装v4-3-9及以上的版本"><a href="#2-Zsh-需要安装v4-3-9及以上的版本" class="headerlink" title="2. Zsh 需要安装v4.3.9及以上的版本."></a>2. Zsh 需要安装v4.3.9及以上的版本.</h4><p><strong>安装命令</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install zsh</div><div class="line">or</div><div class="line">brew install zsh</div></pre></td></tr></table></figure>
@@ -192,12 +193,27 @@
 <p>详情查看：<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins</a></p>
 </blockquote>
 <p><code>oh my zsh</code> 项目提供了完善的插件体系，相关的文件在<code>~/.oh-my-zsh/plugins</code>目录下，默认提供了100多种，大家可以根据自己的实际学习和工作环境采用，想了解每个插件的功能，只要打开相关目录下的 <code>zsh</code> 文件看一下就知道了。插件也是在<code>.zshrc</code>里配置，找到<code>plugins</code>关键字，你就可以加载自己的插件了，系统默认加载 <code>git</code> ，你可以在后面追加内容，如下：</p>
-<figure class="highlight plain"><figcaption><span>textmate ruby autojump osx mvn gradle)```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">下面简单介绍几个：</div><div class="line"></div><div class="line">1. `git`：当你处于一个 `git` 受控的目录下时，`Shell` 会明确显示 「git」和 `branch`，如上图所示，另外对 `git` 很多命令进行了简化，例如 `gco=’git checkout’`、`gd=’git diff’`、`gst=’git status’`、`g=’git’`等等，熟练使用可以大大减少 `git` 的命令长度，命令内容可以参考`~/.oh-my-zsh/plugins/git/git.plugin.zsh`</div><div class="line"></div><div class="line">2. `textmate`：`mr`可以创建 `ruby` 的框架项目，`tm finename` 可以用 `textmate` 打开指定文件。</div><div class="line"></div><div class="line">3. `osx`：`tab` 增强，`quick-look filename` 可以直接预览文件，`man-preview grep` 可以生成 `grep`手册 的`pdf` 版本等。</div><div class="line"></div><div class="line">4. `autojump`：`zsh` 和 `autojump` 的组合形成了 `zsh` 下最强悍的插件，今天我们主要说说这货。</div><div class="line"></div><div class="line">首先安装`autojump`，如果你用 `Mac`，可以使用 `brew` 安装：</div></pre></td></tr></table></figure>
-<p>brew install autojump<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">如果是 `Linux`，去下载 `autojump` 的最新版本，比如：</div></pre></td></tr></table></figure></p>
-<p>wget <a href="https://github.com/downloads/joelthelion/autojump/autojump_v21.1.2.tar.gz" target="_blank" rel="external">https://github.com/downloads/joelthelion/autojump/autojump_v21.1.2.tar.gz</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">解压缩后进入目录，执行</div></pre></td></tr></table></figure></p>
-<p>./install.sh<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">最后把以下代码加入.zshrc：</div></pre></td></tr></table></figure></p>
-<p>[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] &amp;&amp; . ~/.autojump/etc/profile.d/autojump.sh<br><code>``
-至此，安装、配置、插件三位一体，终极</code>Shell<code>全面登场。退出终端会话重新登录，开始感受</code>zsh` 的训疾如风！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plugins=(git textmate ruby autojump osx mvn gradle)</div></pre></td></tr></table></figure>
+<p>下面简单介绍几个：</p>
+<ol>
+<li><p><code>git</code>：当你处于一个 <code>git</code> 受控的目录下时，<code>Shell</code> 会明确显示 「git」和 <code>branch</code>，如上图所示，另外对 <code>git</code> 很多命令进行了简化，例如 <code>gco=’git checkout’</code>、<code>gd=’git diff’</code>、<code>gst=’git status’</code>、<code>g=’git’</code>等等，熟练使用可以大大减少 <code>git</code> 的命令长度，命令内容可以参考<code>~/.oh-my-zsh/plugins/git/git.plugin.zsh</code></p>
+</li>
+<li><p><code>textmate</code>：<code>mr</code>可以创建 <code>ruby</code> 的框架项目，<code>tm finename</code> 可以用 <code>textmate</code> 打开指定文件。</p>
+</li>
+<li><p><code>osx</code>：<code>tab</code> 增强，<code>quick-look filename</code> 可以直接预览文件，<code>man-preview grep</code> 可以生成 <code>grep</code>手册 的<code>pdf</code> 版本等。</p>
+</li>
+<li><p><code>autojump</code>：<code>zsh</code> 和 <code>autojump</code> 的组合形成了 <code>zsh</code> 下最强悍的插件，今天我们主要说说这货。</p>
+</li>
+</ol>
+<p>首先安装<code>autojump</code>，如果你用 <code>Mac</code>，可以使用 <code>brew</code> 安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install autojump</div></pre></td></tr></table></figure>
+<p>如果是 <code>Linux</code>，去下载 <code>autojump</code> 的最新版本，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/downloads/joelthelion/autojump/autojump_v21.1.2.tar.gz</div></pre></td></tr></table></figure>
+<p>解压缩后进入目录，执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./install.sh</div></pre></td></tr></table></figure>
+<p>最后把以下代码加入.zshrc：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] &amp;&amp; . ~/.autojump/etc/profile.d/autojump.sh</div></pre></td></tr></table></figure>
+<p>至此，安装、配置、插件三位一体，终极 <code>Shell</code> 全面登场。退出终端会话重新登录，开始感受 <code>zsh</code> 的训疾如风！</p>
 <h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><p><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet</a></p>
 <h3 id="强大功能"><a href="#强大功能" class="headerlink" title="强大功能"></a>强大功能</h3><ol>
 <li><p>兼容 <code>bash</code>，原来使用 <code>bash</code> 的兄弟切换过来毫无压力，该咋用咋用。</p>
@@ -245,7 +261,24 @@
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;Oh-My-Zsh 是一个开源项目，&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/robb
+&lt;p&gt;Oh-My-Zsh 是一个开源项目，&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot;&gt;https://github.com/robbyrussell/oh-my-zsh&lt;/a&gt;，功能强大，有丰富的插件及主题，BIGER满满，下面有介绍。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;快速预览&quot;&gt;&lt;a href=&quot;#快速预览&quot; class=&quot;headerlink&quot; title=&quot;快速预览&quot;&gt;&lt;/a&gt;快速预览&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://oda2i06ov.bkt.clouddn.com/big-shell-overview.gif&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;zsh是啥&quot;&gt;&lt;a href=&quot;#zsh是啥&quot; class=&quot;headerlink&quot; title=&quot;zsh是啥&quot;&gt;&lt;/a&gt;zsh是啥&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Shell是Linux/Unix的一个外壳，你理解成衣服也行。它负责外界与Linux内核的交互，接收用户或其他应用程序的命令，然后把这些命令转化成内核能理解的语言，传给内核，内核是真正干活的，干完之后再把结果返回用户或应用程序。&lt;/p&gt;
+&lt;p&gt;Linux/Unix提供了很多种Shell，为毛要这么多Shell？难道用来炒着吃么？那我问你，你同类型的衣服怎么有那么多件？花色，质地还不一样。写程序比买衣服复杂多了，而且程序员往往负责把复杂的事情搞简单，简单的事情搞复杂。牛程序员看到不爽的Shell，就会自己重新写一套，慢慢形成了一些标准，常用的Shell有这么几种，sh、bash、csh等，想知道你的系统有几种shell，可以通过以下命令查看：&lt;/p&gt;
+&lt;p&gt;cat /etc/shells&lt;/p&gt;
+&lt;p&gt;显示如下：&lt;/p&gt;
+&lt;pre&gt;
+    /bin/bash
+    /bin/csh
+    /bin/ksh
+    /bin/sh
+    /bin/tcsh
+    /bin/zsh
+&lt;/pre&gt;
+
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -263,11 +296,11 @@
     <link href="https://isanwenyu.github.io/2016/11/23/HighLight-latest-usage/"/>
     <id>https://isanwenyu.github.io/2016/11/23/HighLight-latest-usage/</id>
     <published>2016-11-23T03:25:46.000Z</published>
-    <updated>2016-12-15T07:27:10.000Z</updated>
+    <updated>2016-12-16T03:16:21.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Highlight"><a href="#Highlight" class="headerlink" title="Highlight"></a>Highlight</h1><p><a href="https://bintray.com/isanwenyu/maven/Highlight/_latestVersion" target="_blank" rel="external"> <img src="https://api.bintray.com/packages/isanwenyu/maven/Highlight/images/download.svg" alt="Download"> </a></p>
 <blockquote>
-<p>一个用于app指向性功能高亮的库。<br><br>forked from <a href="https://github.com/hongyangAndroid/Highlight" target="_blank" rel="external">hongyangAndroid/Highlight</a><br><br>最新地址：<a href="https://github.com/isanwenyu/Highlight" target="_blank" rel="external">https://github.com/isanwenyu/Highlight</a><br><br>博文地址(转载请保留)：<a href="https://isanwenyu.github.io/2016/11/23/HighLight-latest-usage/">https://isanwenyu.github.io/2016/11/23/HighLight-latest-usage/</a></p>
+<p>一个用于app指向性功能高亮的库。<br><br>最新地址：<a href="https://github.com/isanwenyu/Highlight" target="_blank" rel="external">https://github.com/isanwenyu/Highlight</a><br><br>博文地址(转载请保留)：<a href="https://isanwenyu.github.io/2016/11/23/HighLight-latest-usage/">https://isanwenyu.github.io/2016/11/23/HighLight-latest-usage/</a></p>
 </blockquote>
 <h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p>竖屏：</p>
 <p><img src="http://oda2i06ov.bkt.clouddn.com/high_light_demo.gif" width="320px"></p>
@@ -280,6 +313,7 @@
 <h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><h3 id="Next-Mode-下一步模式"><a href="#Next-Mode-下一步模式" class="headerlink" title="Next Mode 下一步模式"></a>Next Mode 下一步模式</h3><blockquote>
 <p>调用<code>enableNext()</code>开启<code>Next</code>模式并显示，然后调用<code>next()</code>方法显示下一个提示布局 直到删除自己</p>
 </blockquote>
+<a id="more"></a>
 <h4 id="1-开启next模式并显示"><a href="#1-开启next模式并显示" class="headerlink" title="1. 开启next模式并显示"></a>1. 开启next模式并显示</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">    /**</div><div class="line">     * 显示 next模式 我知道了提示高亮布局</div><div class="line">     * @param view id为R.id.iv_known的控件</div><div class="line">     * @author isanwenyu@163.com</div><div class="line">     */</div><div class="line">    public  void showNextKnownTipView(View view)</div><div class="line">    &#123;</div><div class="line">        mHightLight = new HighLight(MainActivity.this)//</div><div class="line">                .autoRemove(false)//设置背景点击高亮布局自动移除为false 默认为true</div><div class="line">//                .intercept(false)//设置拦截属性为false 高亮布局不影响后面布局的滑动效果</div><div class="line">                .intercept(true)//拦截属性默认为true 使下方ClickCallback生效</div><div class="line">                .enableNext()//开启next模式并通过show方法显示 然后通过调用next()方法切换到下一个提示布局，直到移除自身</div><div class="line">//                .setClickCallback(new HighLight.OnClickCallback() &#123;</div><div class="line">//                    @Override</div><div class="line">//                    public void onClick() &#123;</div><div class="line">//                        Toast.makeText(MainActivity.this, &quot;clicked and remove HightLight view by yourself&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">//                        remove(null);</div><div class="line">//                    &#125;</div><div class="line">//                &#125;)</div><div class="line">                .anchor(findViewById(R.id.id_container))//如果是Activity上增加引导层，不需要设置anchor</div><div class="line">                .addHighLight(R.id.btn_rightLight,R.layout.info_known,new OnLeftPosCallback(45),new RectLightShape(0,0,15,0,0))//矩形去除圆角</div><div class="line">                .addHighLight(R.id.btn_light,R.layout.info_known,new OnRightPosCallback(5),new BaseLightShape(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,5,getResources().getDisplayMetrics()), TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,5,getResources().getDisplayMetrics()),0) &#123;</div><div class="line">                    @Override</div><div class="line">                    protected void resetRectF4Shape(RectF viewPosInfoRectF, float dx, float dy) &#123;</div><div class="line">                        //缩小高亮控件范围</div><div class="line">                        viewPosInfoRectF.inset(dx,dy);</div><div class="line">                    &#125;</div><div class="line"></div><div class="line">                    @Override</div><div class="line">                    protected void drawShape(Bitmap bitmap, HighLight.ViewPosInfo viewPosInfo) &#123;</div><div class="line">                        //custom your hight light shape 自定义高亮形状</div><div class="line">                        Canvas canvas = new Canvas(bitmap);</div><div class="line">                        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);</div><div class="line">                        paint.setDither(true);</div><div class="line">                        paint.setAntiAlias(true);</div><div class="line">                        //blurRadius必须大于0</div><div class="line">                        if(blurRadius&gt;0)&#123;</div><div class="line">                            paint.setMaskFilter(new BlurMaskFilter(blurRadius, BlurMaskFilter.Blur.SOLID));</div><div class="line">                        &#125;</div><div class="line">                        RectF rectF = viewPosInfo.rectF;</div><div class="line">                        canvas.drawOval(rectF, paint);</div><div class="line">                    &#125;</div><div class="line">                &#125;)</div><div class="line">                .addHighLight(R.id.btn_bottomLight,R.layout.info_known,new OnTopPosCallback(),new CircleLightShape())</div><div class="line">                .addHighLight(view,R.layout.info_known,new OnBottomPosCallback(10),new OvalLightShape(5,5,20))</div><div class="line">                .setOnRemoveCallback(new HighLightInterface.OnRemoveCallback() &#123;//监听移除回调 </div><div class="line">                    @Override</div><div class="line">                    public void onRemove() &#123;</div><div class="line">                        Toast.makeText(MainActivity.this, &quot;The HightLight view has been removed&quot;, Toast.LENGTH_SHORT).show();</div><div class="line"></div><div class="line">                    &#125;</div><div class="line">                &#125;)</div><div class="line">                .setOnShowCallback(new HighLightInterface.OnShowCallback() &#123;//监听显示回调</div><div class="line">                    @Override</div><div class="line">                    public void onShow(HightLightView hightLightView) &#123;</div><div class="line">                        Toast.makeText(MainActivity.this, &quot;The HightLight view has been shown&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">                    &#125;</div><div class="line">                &#125;).setOnNextCallback(new HighLightInterface.OnNextCallback() &#123;</div><div class="line">                    @Override</div><div class="line">                    public void onNext(HightLightView hightLightView, View targetView, View tipView) &#123;</div><div class="line">                        // targetView 目标按钮 tipView添加的提示布局 可以直接找到&apos;我知道了&apos;按钮添加监听事件等处理</div><div class="line">                        Toast.makeText(MainActivity.this, &quot;The HightLight show next TipView，targetViewID:&quot;+(targetView==null?null:targetView.getId())+&quot;,tipViewID:&quot;+(tipView==null?null:tipView.getId()), Toast.LENGTH_SHORT).show();</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">        mHightLight.show();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <h4 id="2-调用next-方法依次显示之前添加到提示布局-最后自动移除"><a href="#2-调用next-方法依次显示之前添加到提示布局-最后自动移除" class="headerlink" title="2. 调用next()方法依次显示之前添加到提示布局 最后自动移除"></a>2. 调用next()方法依次显示之前添加到提示布局 最后自动移除</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">     * 响应所有R.id.iv_known的控件的点击事件</div><div class="line">     * &lt;p&gt;</div><div class="line">     *  移除高亮布局</div><div class="line">     * &lt;/p&gt;</div><div class="line">     *</div><div class="line">     * @param view</div><div class="line">     */</div><div class="line">    public void clickKnown(View view)</div><div class="line">    &#123;</div><div class="line">        if(mHightLight.isShowing() &amp;&amp; mHightLight.isNext())//如果开启next模式</div><div class="line">        &#123;</div><div class="line">            mHightLight.next();</div><div class="line">        &#125;else</div><div class="line">        &#123;</div><div class="line">            remove(null);</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <h4 id="3-下一步回调监听"><a href="#3-下一步回调监听" class="headerlink" title="3. 下一步回调监听"></a>3. 下一步回调监听</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 下一个回调监听 只有Next模式下生效</div><div class="line"> */</div><div class="line">public static interface OnNextCallback &#123;</div><div class="line">    /**</div><div class="line">     * 监听下一步动作</div><div class="line">     *</div><div class="line">     * @param hightLightView 高亮布局控件</div><div class="line">     * @param targetView     高亮目标控件</div><div class="line">     * @param tipView        高亮提示控件</div><div class="line">     */</div><div class="line">    void onNext(HightLightView hightLightView, View targetView, View tipView);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -418,7 +452,21 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Highlight&quot;&gt;&lt;a href=&quot;#Highlight&quot; class=&quot;headerlink&quot; title=&quot;Highlight&quot;&gt;&lt;/a&gt;Highlight&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://bintray.com/isanwenyu/mav
+      &lt;h1 id=&quot;Highlight&quot;&gt;&lt;a href=&quot;#Highlight&quot; class=&quot;headerlink&quot; title=&quot;Highlight&quot;&gt;&lt;/a&gt;Highlight&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://bintray.com/isanwenyu/maven/Highlight/_latestVersion&quot;&gt; &lt;img src=&quot;https://api.bintray.com/packages/isanwenyu/maven/Highlight/images/download.svg&quot; alt=&quot;Download&quot;&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一个用于app指向性功能高亮的库。&lt;br/&gt;&lt;br&gt;最新地址：&lt;a href=&quot;https://github.com/isanwenyu/Highlight&quot;&gt;https://github.com/isanwenyu/Highlight&lt;/a&gt;&lt;br/&gt;&lt;br&gt;博文地址(转载请保留)：&lt;a href=&quot;https://isanwenyu.github.io/2016/11/23/HighLight-latest-usage/&quot;&gt;https://isanwenyu.github.io/2016/11/23/HighLight-latest-usage/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;效果图&quot;&gt;&lt;a href=&quot;#效果图&quot; class=&quot;headerlink&quot; title=&quot;效果图&quot;&gt;&lt;/a&gt;效果图&lt;/h2&gt;&lt;p&gt;竖屏：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oda2i06ov.bkt.clouddn.com/high_light_demo.gif&quot; width=&quot;320px&quot;/&gt;&lt;/p&gt;
+&lt;h2 id=&quot;引入&quot;&gt;&lt;a href=&quot;#引入&quot; class=&quot;headerlink&quot; title=&quot;引入&quot;&gt;&lt;/a&gt;引入&lt;/h2&gt;&lt;p&gt;下载代码，然后：&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;dependencies &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;       compile project(&#39;:highlight&#39;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;或者&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;compile &amp;apos;com.isanwenyu.highlight:highlight:1.7.1&amp;apos;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;再或者&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;lt;groupId&amp;gt;com.isanwenyu.highlight&amp;lt;/groupId&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;lt;artifactId&amp;gt;highlight&amp;lt;/artifactId&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;lt;version&amp;gt;1.7.1&amp;lt;/version&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;使用场景&quot;&gt;&lt;a href=&quot;#使用场景&quot; class=&quot;headerlink&quot; title=&quot;使用场景&quot;&gt;&lt;/a&gt;使用场景&lt;/h2&gt;&lt;h3 id=&quot;Next-Mode-下一步模式&quot;&gt;&lt;a href=&quot;#Next-Mode-下一步模式&quot; class=&quot;headerlink&quot; title=&quot;Next Mode 下一步模式&quot;&gt;&lt;/a&gt;Next Mode 下一步模式&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;调用&lt;code&gt;enableNext()&lt;/code&gt;开启&lt;code&gt;Next&lt;/code&gt;模式并显示，然后调用&lt;code&gt;next()&lt;/code&gt;方法显示下一个提示布局 直到删除自己&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -436,7 +484,7 @@
     <link href="https://isanwenyu.github.io/2016/09/29/gradle-push-repo-maven/"/>
     <id>https://isanwenyu.github.io/2016/09/29/gradle-push-repo-maven/</id>
     <published>2016-09-29T10:27:05.000Z</published>
-    <updated>2016-09-30T07:24:27.000Z</updated>
+    <updated>2016-12-15T16:31:31.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>前两天在<code>Bintray</code>中我把<code>maven</code>中的<a href="https://github.com/isanwenyu/LazyFragment.git" target="_blank" rel="external">LazyFragment</a>开源项目删除并重新上传。由于之前该repo已经添加到<code>JCenter</code>中，当我再次上传成功后再次往<code>JCenter</code>中添加时，<code>Bintray</code>返回消息：<code>The package you requested to include already exists in JCenter</code>，并且看到我<code>maven</code>仓库中有了名为<strong>LazyFragment-{我的用户名}</strong>的临时<code>repo</code>。当时一脸懵逼，欲哭无泪！在搜索相关问题未果后，重新上传了一个新版本repo，重新关联到<code>JCenter</code>中同包名的repo，并合并之前的临时repo到新发布的<code>maven repo</code>中。因此整理流程如下，供大家参考。</p>
@@ -454,7 +502,8 @@
 <blockquote>
 <p><strong>下面正式进行实现依赖的实现</strong></p>
 </blockquote>
-<h1 id="使用gradle发布项目到JCenter中央仓库"><a href="#使用gradle发布项目到JCenter中央仓库" class="headerlink" title="使用gradle发布项目到JCenter中央仓库"></a>使用gradle发布项目到JCenter中央仓库</h1><h2 id="注册bintray"><a href="#注册bintray" class="headerlink" title="注册bintray"></a>注册bintray</h2><p>首先要在<a href="https://bintray.com" target="_blank" rel="external">https://bintray.com</a> 中注册账号，注册都是很简单的就不所说了。<br>然后回到主页在你的<code>Owned Repositories</code>中看下你是否已经添加了<code>maven</code>。<br>图<br>第一次注册的应该没有，所以我们要先<code>New Repository</code>创建<code>maven</code></p>
+<h1 id="使用gradle发布项目到JCenter中央仓库"><a href="#使用gradle发布项目到JCenter中央仓库" class="headerlink" title="使用gradle发布项目到JCenter中央仓库"></a>使用gradle发布项目到JCenter中央仓库</h1><a id="more"></a>
+<h2 id="注册bintray"><a href="#注册bintray" class="headerlink" title="注册bintray"></a>注册bintray</h2><p>首先要在<a href="https://bintray.com" target="_blank" rel="external">https://bintray.com</a> 中注册账号，注册都是很简单的就不所说了。<br>然后回到主页在你的<code>Owned Repositories</code>中看下你是否已经添加了<code>maven</code>。<br>图<br>第一次注册的应该没有，所以我们要先<code>New Repository</code>创建<code>maven</code></p>
 <p><img src="http://oda2i06ov.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-29%20%E4%B8%8B%E5%8D%884.31.14.png" height="480"></p>
 <p>创建之后会自动跳转到<code>maven</code>中，你会发现没有<code>package</code>,我们可以<code>Add New Package</code>这种相信都会，我这里要说的是另外一种，我们直接在<code>Android Studio</code>中进行配置然后上传到<code>Bintray</code>。</p>
 <h2 id="代码中配置"><a href="#代码中配置" class="headerlink" title="代码中配置"></a>代码中配置</h2><h3 id="分离成多个Module"><a href="#分离成多个Module" class="headerlink" title="分离成多个Module"></a>分离成多个Module</h3><p>为了使别人能更好的使用，我们一般在实现自己的依赖的时候会把实现的该依赖的源码作为一个<code>Module</code>,再把实例代码作为<code>Application Module</code>。所以我们要事先处理好<code>Module</code>，下面是我弄好的示例</p>
@@ -529,7 +578,22 @@
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;前两天在&lt;code&gt;Bintray&lt;/code&gt;中我把&lt;code&gt;maven&lt;/code&gt;中的&lt;a href=&quot;https://github.com/isanwenyu/LazyFragment.git&quot; target=&quot;_blank&quot; rel=&quot;
+&lt;p&gt;前两天在&lt;code&gt;Bintray&lt;/code&gt;中我把&lt;code&gt;maven&lt;/code&gt;中的&lt;a href=&quot;https://github.com/isanwenyu/LazyFragment.git&quot;&gt;LazyFragment&lt;/a&gt;开源项目删除并重新上传。由于之前该repo已经添加到&lt;code&gt;JCenter&lt;/code&gt;中，当我再次上传成功后再次往&lt;code&gt;JCenter&lt;/code&gt;中添加时，&lt;code&gt;Bintray&lt;/code&gt;返回消息：&lt;code&gt;The package you requested to include already exists in JCenter&lt;/code&gt;，并且看到我&lt;code&gt;maven&lt;/code&gt;仓库中有了名为&lt;strong&gt;LazyFragment-{我的用户名}&lt;/strong&gt;的临时&lt;code&gt;repo&lt;/code&gt;。当时一脸懵逼，欲哭无泪！在搜索相关问题未果后，重新上传了一个新版本repo，重新关联到&lt;code&gt;JCenter&lt;/code&gt;中同包名的repo，并合并之前的临时repo到新发布的&lt;code&gt;maven repo&lt;/code&gt;中。因此整理流程如下，供大家参考。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;Android仓库&quot;&gt;&lt;a href=&quot;#Android仓库&quot; class=&quot;headerlink&quot; title=&quot;Android仓库&quot;&gt;&lt;/a&gt;Android仓库&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;简单的普及下关于&lt;code&gt;Android&lt;/code&gt;的依赖仓库，有两种分别是&lt;code&gt;JCenter&lt;/code&gt;与&lt;code&gt;Maven Central&lt;/code&gt;其实不管是&lt;code&gt;JCenter&lt;/code&gt;还是&lt;code&gt;Maven Central&lt;/code&gt;都是&lt;code&gt;Maven&lt;/code&gt;库。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;JCenter&quot;&gt;&lt;a href=&quot;#JCenter&quot; class=&quot;headerlink&quot; title=&quot;JCenter&quot;&gt;&lt;/a&gt;JCenter&lt;/h2&gt;&lt;p&gt;&lt;code&gt;JCenter&lt;/code&gt;是由&lt;code&gt;bintray.com&lt;/code&gt;维护，在&lt;code&gt;Android Studio&lt;/code&gt;的项目根目录的&lt;code&gt;build.gradle&lt;/code&gt;中我们会看到自动帮我们实现的&lt;code&gt;JCenter&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;buildscript &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    repositories &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        JCenter()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;Maven-Central&quot;&gt;&lt;a href=&quot;#Maven-Central&quot; class=&quot;headerlink&quot; title=&quot;Maven Central&quot;&gt;&lt;/a&gt;Maven Central&lt;/h2&gt;&lt;p&gt;当然也可以在&lt;code&gt;build.gradle&lt;/code&gt;中定义&lt;code&gt;Maven Central&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;buildscript &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    repositories &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        mavenCentral()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;至于在&lt;code&gt;Android Studio&lt;/code&gt;中为什么默认使用&lt;code&gt;JCenter&lt;/code&gt;原因还是有的，感兴趣的可以自己去查，我要说的一点就是，这里你可以认为&lt;code&gt;JCenter&lt;/code&gt;是&lt;code&gt;Maven Central&lt;/code&gt;的超集，这样就能更好的理解为什么要使用&lt;code&gt;JCenter&lt;/code&gt;了。&lt;/p&gt;
+&lt;h2 id=&quot;gradle获取library&quot;&gt;&lt;a href=&quot;#gradle获取library&quot; class=&quot;headerlink&quot; title=&quot;gradle获取library&quot;&gt;&lt;/a&gt;gradle获取library&lt;/h2&gt;&lt;p&gt;这里要了解一下我们看到的依赖所定义的方式，其实是有格式的并不是随便乱写的。其实你只要平常够仔细就能发现他们的格式是一样的。&lt;br&gt;由&lt;code&gt;GroupId&lt;/code&gt;、&lt;code&gt;ArtifactId&lt;/code&gt;与&lt;code&gt;VersionId&lt;/code&gt;组成。例如&lt;code&gt;com.jakewharton:butterknife:6.1.0&lt;/code&gt;它的GroupId是&lt;code&gt;com.jakewharton，ArtifactId&lt;/code&gt;是&lt;code&gt;butterknife&lt;/code&gt;，&lt;code&gt;VersionId&lt;/code&gt;是&lt;code&gt;6.1.0&lt;/code&gt;。现在看这些依赖是不是更清晰了呢。当我们添加了依赖之后&lt;code&gt;gradle&lt;/code&gt;会先去&lt;code&gt;Maven&lt;/code&gt;中查找是否有该library如果有就会使用上面定义的形式下载&lt;code&gt;http://JCenter.bintray.com/GroupId/ArtifactId/VersionId&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;http://JCenter.bintray.com/com/jakewharton/butterknife/6.1.0&lt;/code&gt;&lt;br&gt;通过该链接下载到本地再与我们的项目结合。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;下面正式进行实现依赖的实现&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;使用gradle发布项目到JCenter中央仓库&quot;&gt;&lt;a href=&quot;#使用gradle发布项目到JCenter中央仓库&quot; class=&quot;headerlink&quot; title=&quot;使用gradle发布项目到JCenter中央仓库&quot;&gt;&lt;/a&gt;使用gradle发布项目到JCenter中央仓库&lt;/h1&gt;
     
     </summary>
     
@@ -547,7 +611,7 @@
     <link href="https://isanwenyu.github.io/2016/09/09/hello-world/"/>
     <id>https://isanwenyu.github.io/2016/09/09/hello-world/</id>
     <published>2016-09-09T02:30:52.000Z</published>
-    <updated>2016-09-10T08:40:00.000Z</updated>
+    <updated>2016-12-15T16:34:01.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>欢迎来到我的博客！ 爱代码，爱学习，努力做一个有追求的码农！</p>
@@ -562,6 +626,7 @@
 <li>做个吃货，做个二货</li>
 <li>金正日死前给朝鲜人民的遗言是：Stay hungry, stay foolish. </li>
 </ul>
+<a id="more"></a>
 <h3 id="正统的翻译"><a href="#正统的翻译" class="headerlink" title="正统的翻译"></a>正统的翻译</h3><p>转一下StackExchange上的解释，可能英语母语的人的解释（而且是最高票数的解释）参考价值大一点，：<a href="http://english.stackexchange.com/questions/44538/what-does-the-phrase-stay-hungry-stay-foolish-mean" target="_blank" rel="external">quotes - What does the phrase “Stay Hungry. Stay Foolish” mean?
 </a></p>
 <blockquote>
@@ -583,7 +648,16 @@
       &lt;blockquote&gt;
 &lt;p&gt;欢迎来到我的博客！ 爱代码，爱学习，努力做一个有追求的码农！&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&quot;出处&quot;&gt;&lt;a href=&quot;#出处&quot; class=&quot;headerlink&quot; title=&quot;出处&quot;&gt;&lt;/a&gt;出处&lt;/h3&gt;&lt;p&gt;2005 
+&lt;h3 id=&quot;出处&quot;&gt;&lt;a href=&quot;#出处&quot; class=&quot;headerlink&quot; title=&quot;出处&quot;&gt;&lt;/a&gt;出处&lt;/h3&gt;&lt;p&gt;2005 年乔布斯在斯坦福的演讲中，说道：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;当我年轻的时候，有一本叫做《整个地球的目录》振聋发聩的杂志，它是我们那一代人的圣经之一。它是一个叫 Stewart Brand 的家伙在离这里不远的 Menlo Park 书写的，他象诗一般神奇地将这本书带到了这个世界。那是六十年代后期，在个人电脑出现之前，所以这本书全部是用打字机、剪刀还有偏光镜制作的。有点像用软皮包装的 Google，在 Google 出现三十五年之前：这是理想主义的，其中有许多灵巧的工具和伟大的想法。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Stewart 和他的伙伴出版了几期的《整个地球的目录》，当它完成了自己使命的时候，他们做出了最后一期的目录。那是在七十年代的中期，你们的时代。在最后一期的封底上是清晨乡村公路的照片，如果你有冒险精神的话，你可以自己找到这条路的。在照片之下有这样一段话：“求知若饥，虚心若愚。”这是他们停刊的告别语。“求知若饥，虚心若愚。”我总是希望自己能够那样，现在，在你们即将毕业，开始新的旅程的时候，我也希望你们能做到这样：&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Stay Hungry . Stay Foolish.&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这就是乔布斯所说的「Stay Hungry . Stay Foolish.」的来源，1972 年《整个地球的目录》（Whole Earth Catalog） 的最后一期封底。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/large/801b780agw1f7ojful5cbj20jg0qhwg9.jpg&quot; alt=&quot;封底&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;有意思的释义&quot;&gt;&lt;a href=&quot;#有意思的释义&quot; class=&quot;headerlink&quot; title=&quot;有意思的释义&quot;&gt;&lt;/a&gt;有意思的释义&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;保持饥饿，保持愚蠢&lt;/li&gt;
+&lt;li&gt;求知若饥，虚心若愚&lt;/li&gt;
+&lt;li&gt;做个吃货，做个二货&lt;/li&gt;
+&lt;li&gt;金正日死前给朝鲜人民的遗言是：Stay hungry, stay foolish. &lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
