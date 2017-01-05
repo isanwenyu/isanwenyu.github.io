@@ -4,6 +4,48 @@
 
     
   <url>
+    <loc>https://isanwenyu.github.io/2016/11/23/HighLight-latest-usage/</loc>
+    <lastmod>2017-01-05T06:28:44.000Z</lastmod>
+    <data>
+        <display>
+        <title>一个用于app指向性功能高亮库：HighLight的最新用法</title>
+        <pubTime>2016-11-23T03:25:46.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>GitHub</tag>
+         
+         
+           
+             
+              <breadCrumb title="GitHub" url="https://isanwenyu.github.io/categories/GitHub/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://isanwenyu.github.io/2016/12/30/nfc-those-thing/</loc>
+    <lastmod>2016-12-30T07:15:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>NFC那些事</title>
+        <pubTime>2016-12-30T07:10:52.000Z</pubTime>
+        
+        <tag>NFC</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT" url="https://isanwenyu.github.io/categories/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://isanwenyu.github.io/2016/12/14/big-shell/</loc>
     <lastmod>2016-12-16T03:20:20.000Z</lastmod>
     <data>
@@ -19,28 +61,6 @@
            
              
               <breadCrumb title="Tools" url="https://isanwenyu.github.io/categories/Tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://isanwenyu.github.io/2016/11/23/HighLight-latest-usage/</loc>
-    <lastmod>2016-12-16T03:16:21.000Z</lastmod>
-    <data>
-        <display>
-        <title>一个用于app指向性功能高亮库：HighLight的最新用法</title>
-        <pubTime>2016-11-23T03:25:46.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>GitHub</tag>
-         
-         
-           
-             
-              <breadCrumb title="GitHub" url="https://isanwenyu.github.io/categories/GitHub/"/>
           
         </display>
     </data>
@@ -75,9 +95,9 @@
         <title>如何把Android Studio项目发布到中央仓库JCenter/第三方仓库JitPack中</title>
         <pubTime>2016-09-29T10:27:05.000Z</pubTime>
         
-        <tag>gradle</tag>
-         
         <tag>Android</tag>
+         
+        <tag>gradle</tag>
          
          
            
