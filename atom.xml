@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>三文鱼的博客</title>
+  <title>三文鱼</title>
   <subtitle>专注于移动应用开发</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -518,9 +518,9 @@
       <category term="Android" scheme="https://isanwenyu.github.io/categories/Android/"/>
     
     
-      <category term="gradle" scheme="https://isanwenyu.github.io/tags/gradle/"/>
-    
       <category term="Android" scheme="https://isanwenyu.github.io/tags/Android/"/>
+    
+      <category term="gradle" scheme="https://isanwenyu.github.io/tags/gradle/"/>
     
   </entry>
   
